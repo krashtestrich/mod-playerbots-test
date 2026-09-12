@@ -13,6 +13,7 @@
 #include "CoSStrategy.h"
 #include "DTKStrategy.h"
 #include "FoSStrategy.h"
+#include "FurnStrategy.h"
 #include "GDStrategy.h"
 #include "HoLStrategy.h"
 #include "HoSStrategy.h"
@@ -45,6 +46,7 @@ class DungeonStrategyContext : public NamedObjectContext<Strategy>
             creators["tbc-ub"] = &DungeonStrategyContext::tbc_ub;           // Coilfang Reservoir: The Underbog
             creators["tbc-mgt"] = &DungeonStrategyContext::tbc_mgt;         // Magisters' Terrace
             creators["tbc-ramp"] = &DungeonStrategyContext::tbc_ramp;       // Hellfire Citadel: Hellfire Ramparts
+            creators["tbc-furn"] = &DungeonStrategyContext::tbc_furn;       // Hellfire Citadel: The Blood Furnace
 
             // Wrath of the Lich King
             creators["wotlk-uk"] = &DungeonStrategyContext::wotlk_uk;       // Utgarde Keep
@@ -70,6 +72,7 @@ class DungeonStrategyContext : public NamedObjectContext<Strategy>
         static Strategy* tbc_ub(PlayerbotAI* botAI) { return new TbcDungeonUnderbogStrategy(botAI); }
         static Strategy* tbc_mgt(PlayerbotAI* botAI) { return new TbcDungeonMagistersTerraceStrategy(botAI); }
         static Strategy* tbc_ramp(PlayerbotAI* botAI) { return new TbcDungeonHellfireRampartsStrategy(botAI); }
+        static Strategy* tbc_furn(PlayerbotAI* botAI) { return new TbcDungeonBloodFurnaceStrategy(botAI); }
         static Strategy* wotlk_uk(PlayerbotAI* botAI) { return new WotlkDungeonUKStrategy(botAI); }
         static Strategy* wotlk_nex(PlayerbotAI* botAI) { return new WotlkDungeonNexStrategy(botAI); }
         static Strategy* wotlk_an(PlayerbotAI* botAI) { return new WotlkDungeonANStrategy(botAI); }
